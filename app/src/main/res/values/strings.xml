@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Bookworld</string>
+    <string name="title_activity_dash_board">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">My Books</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="add_book_title">Book Title</string>
+    <string name="add_book_ISBN">Book ISBN</string>
+    <string name="add_book_description">Book Description</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

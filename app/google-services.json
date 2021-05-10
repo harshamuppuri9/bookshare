@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "455792894955",
+    "project_id": "bookworld-c8b8b",
+    "storage_bucket": "bookworld-c8b8b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:455792894955:android:b815d224463dd8dc1befae",
+        "android_client_info": {
+          "package_name": "com.practise.bookworld"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "455792894955-dloongvmr1q0kfsjp8ca2ced8b9m3h1v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.practise.bookworld",
+            "certificate_hash": "9df3ed1d9582d82307e9d1d3a7332148e4e834f3"
+          }
+        },
+        {
+          "client_id": "455792894955-6j13qh3nb1s6gbps394pl62n7qp7916c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdvl3AxK8uLJfPV0BLZ_IEwWWtEf_DNlg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "455792894955-6j13qh3nb1s6gbps394pl62n7qp7916c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
