@@ -1,17 +1,23 @@
 package com.practise.bookworld.firestoreConfig
 
 import android.app.Activity
+import android.app.Application
+import android.content.Context
 import android.net.Uri
 import android.util.Log
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.practise.bookworld.models.Book
+import com.practise.bookworld.models.User
 import com.practise.bookworld.ui.activities.AddBookActivity
 import com.practise.bookworld.ui.activities.DetailsActivity
+import com.practise.bookworld.ui.activities.LoginActivity
+import com.practise.bookworld.ui.activities.RegisterActivity
 import com.practise.bookworld.ui.fragments.HomeFragment
 import com.practise.bookworld.ui.fragments.MyBooksFragment
 import com.practise.bookworld.utils.Constants
@@ -117,4 +123,65 @@ class FirebaseConfig {
                 Log.e(activity.javaClass.simpleName,"Error while fetching book details")
             }
     }
+
+    fun addUserDetails(user:User,activity: RegisterActivity){
+        firestoreObject.collection("users")
+            .document(user.user_id)
+            .set(user, SetOptions.merge())
+            .addOnFailureListener {
+                activity.onAddingUserSuccessfully()
+            }
+            .addOnFailureListener {
+                activity.hideProgressBar()
+                Log.e(activity.javaClass.simpleName,"Error in fetching the user details")
+            }
+    }
+
+    fun getUserDetails(activity: Activity) {
+        var loggedInuserId = FirebaseAuth.getInstance().currentUser.uid
+        firestoreObject
+            .collection("users")
+            .document(loggedInuserId.toString())
+            .get()
+            .addOnSuccessListener { doc ->
+                val user = doc.toObject(User::class.java)
+                if(user!= null){
+                    //store user details locally
+                    val sharedPreferences = activity.getSharedPreferences("USER",Context.MODE_PRIVATE)
+
+                    //Editor instance to edit the stored details
+                    val editor = sharedPreferences.edit()
+                    editor.putString("lastname","${user!!.lastName}")
+                    editor.putString("id","${user.user_id}")
+                    editor.apply()
+
+                    when(activity){
+                        is LoginActivity ->{
+                            activity.hideProgressBar()
+
+                                activity.onLoginSuccess(user)
+
+                        }
+//                    is profileSettingsActivity ->{
+//                        activity.OnProfileUpdateSuccess(user)
+//                    }
+                    }
+                }else{
+                    Log.e(activity.javaClass.simpleName,"Error in fetching the user details")
+                }
+
+            }
+            .addOnFailureListener {
+                Log.e(activity.javaClass.simpleName,"Error in fetching the user details")
+                when(activity){
+                    is LoginActivity ->{
+                        activity.hideProgressBar()
+                    }
+//                    is profileSettingsActivity ->{
+//                        activity.OnProfileUpdateSuccess(user)
+//                    }
+                }
+            }
+    }
+
 }

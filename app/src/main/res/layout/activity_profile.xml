@@ -8,175 +8,172 @@
     android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
     tools:context=".ui.activities.RegisterActivity">
 
-<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        >-->
-<!--        -->
-<!--        <com.practise.bookworld.utils.CustomTextView-->
-<!--            android:id="@+id/register_title"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginStart="16dp"-->
-<!--            android:layout_marginTop="8dp"-->
-<!--            android:layout_marginEnd="32dp"-->
-<!--            android:includeFontPadding="false"-->
-<!--            android:text="Update Profile"-->
-<!--            android:textAlignment="center"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:textSize="25sp"-->
-<!--            android:textStyle="bold"-->
-<!--            android:transitionName="@string/hello_there_welcome_back"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="0.287"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent" />-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <com.practise.bookworld.utils.CustomTextView
+            android:id="@+id/register_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:includeFontPadding="false"
+            android:text="Update Profile"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:transitionName="@string/hello_there_welcome_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.287"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
-<!--        <com.google.android.material.textfield.TextInputLayout-->
-<!--            android:id="@+id/profilePage_firstName"-->
-<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="16dp"-->
-<!--            android:hint="Enter FirstName"-->
-<!--            android:textColorHint="#989898"-->
-<!--            app:layout_constraintEnd_toEndOf="@+id/register_title"-->
-<!--            app:layout_constraintHorizontal_bias="0.0"-->
-<!--            app:layout_constraintStart_toStartOf="@+id/register_title"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/imageView3">-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/profilePage_firstName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Enter FirstName"
+            android:textColorHint="#989898"
+            app:layout_constraintEnd_toEndOf="@+id/register_title"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/register_title"
+            app:layout_constraintTop_toBottomOf="@+id/profilePage_imageView">
 
-<!--            <com.practise.bookworld.utils.CustomEditText-->
-<!--                android:id="@+id/firstname"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="59dp"-->
-<!--                android:inputType="text"-->
-<!--                android:padding="16dp"-->
-<!--                android:textColor="#222934"-->
-<!--                android:textSize="16sp" />-->
-<!--        </com.google.android.material.textfield.TextInputLayout>-->
+            <com.practise.bookworld.utils.CustomEditText
+                android:id="@+id/firstname"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:inputType="text"
+                android:padding="16dp"
+                android:textColor="#222934"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-<!--        <com.google.android.material.textfield.TextInputLayout-->
-<!--            android:id="@+id/profilePage_lastName"-->
-<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="16dp"-->
-<!--            android:hint="Enter LastName"-->
-<!--            android:textColorHint="#989898"-->
-<!--            app:layout_constraintEnd_toEndOf="@+id/profilePage_firstName"-->
-<!--            app:layout_constraintHorizontal_bias="0.0"-->
-<!--            app:layout_constraintStart_toStartOf="@+id/profilePage_firstName"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/profilePage_firstName">-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/profilePage_lastName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Enter LastName"
+            android:textColorHint="#989898"
+            app:layout_constraintEnd_toEndOf="@+id/profilePage_firstName"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/profilePage_firstName"
+            app:layout_constraintTop_toBottomOf="@+id/profilePage_firstName">
 
-<!--            <com.practise.bookworld.utils.CustomEditText-->
-<!--                android:id="@+id/lastname"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:inputType="text"-->
-<!--                android:padding="16dp"-->
-<!--                android:textColor="#222934"-->
-<!--                android:textSize="16sp" />-->
+            <com.practise.bookworld.utils.CustomEditText
+                android:id="@+id/lastname"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:padding="16dp"
+                android:textColor="#222934"
+                android:textSize="16sp" />
 
-<!--        </com.google.android.material.textfield.TextInputLayout>-->
+        </com.google.android.material.textfield.TextInputLayout>
 
-<!--        <com.google.android.material.textfield.TextInputLayout-->
-<!--            android:id="@+id/profilePage_email"-->
-<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="16dp"-->
-<!--            android:hint="Enter Email ID"-->
-<!--            android:textColorHint="#989898"-->
-<!--            app:layout_constraintEnd_toEndOf="@+id/profilePage_lastName"-->
-<!--            app:layout_constraintHorizontal_bias="0.0"-->
-<!--            app:layout_constraintStart_toStartOf="@+id/profilePage_lastName"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/profilePage_lastName">-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/profilePage_email"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Enter Email ID"
+            android:textColorHint="#989898"
+            app:layout_constraintEnd_toEndOf="@+id/profilePage_lastName"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/profilePage_lastName"
+            app:layout_constraintTop_toBottomOf="@+id/profilePage_lastName">
 
-<!--            <com.practise.bookworld.utils.CustomEditText-->
-<!--                android:id="@+id/email"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:inputType="textEmailAddress"-->
-<!--                android:padding="16dp"-->
-<!--                android:textColor="#222934"-->
-<!--                android:textSize="16sp" />-->
-<!--        </com.google.android.material.textfield.TextInputLayout>-->
+            <com.practise.bookworld.utils.CustomEditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textEmailAddress"
+                android:padding="16dp"
+                android:textColor="#222934"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-<!--        <com.google.android.material.textfield.TextInputLayout-->
-<!--            android:id="@+id/mobileNumber"-->
-<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="16dp"-->
-<!--            android:hint="Enter Mobile"-->
-<!--            android:textColorHint="#989898"-->
-<!--            app:layout_constraintEnd_toEndOf="@+id/profilePage_email"-->
-<!--            app:layout_constraintHorizontal_bias="0.0"-->
-<!--            app:layout_constraintStart_toStartOf="@+id/profilePage_email"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/profilePage_email"-->
-<!--        ">-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/mobileNumber"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Enter Mobile"
+            android:textColorHint="#989898"
+            app:layout_constraintEnd_toEndOf="@+id/profilePage_email"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/profilePage_email"
+            app:layout_constraintTop_toBottomOf="@+id/profilePage_email">
+        <com.practise.bookworld.utils.CustomEditText
+                android:id="@+id/profile_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:padding="16dp"
+                android:textColor="#222934"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-<!--            <com.practise.bookworld.utils.CustomEditText-->
-<!--                android:id="@+id/profilePage_mobile"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:inputType="text"-->
-<!--                android:padding="16dp"-->
-<!--                android:textColor="#222934"-->
-<!--                android:textSize="16sp" />-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/location"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Enter City"
+            android:textColorHint="#989898"
+            app:layout_constraintEnd_toEndOf="@+id/mobileNumber"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/mobileNumber"
+            app:layout_constraintTop_toBottomOf="@+id/mobileNumber"
+           >
 
-<!--       -->
+            <com.practise.bookworld.utils.CustomEditText
+                android:id="@+id/profile_city"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:padding="16dp"
+                android:textColor="#222934"
+                android:textSize="16sp" />
 
-<!--        <com.google.android.material.textfield.TextInputLayout-->
-<!--            android:id="@+id/location"-->
-<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="16dp"-->
-<!--            android:hint="Enter City"-->
-<!--            android:textColorHint="#989898"-->
-<!--            app:layout_constraintEnd_toEndOf="@+id/mobileNumber"-->
-<!--            app:layout_constraintHorizontal_bias="0.0"-->
-<!--            app:layout_constraintStart_toStartOf="@+id/mobileNumber"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/mobileNumber"-->
-<!--           >-->
+        </com.google.android.material.textfield.TextInputLayout>
 
-<!--            <com.practise.bookworld.utils.CustomEditText-->
-<!--                android:id="@+id/profilePage_city"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:inputType="text"-->
-<!--                android:padding="16dp"-->
-<!--                android:textColor="#222934"-->
-<!--                android:textSize="16sp" />-->
+        <com.practise.bookworld.utils.CustomButton
+            android:id="@+id/profile_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/field_bg_color"
+            android:text="Update"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/location"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/location"
+            app:layout_constraintTop_toBottomOf="@+id/location" />
 
-<!--        </com.google.android.material.textfield.TextInputLayout>-->
+        <ImageView
+            android:id="@+id/profilePage_imageView"
+            android:layout_width="122dp"
+            android:layout_height="113dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/register_title"
+            tools:srcCompat="@tools:sample/avatars" />
 
-<!--        <com.practise.bookworld.utils.CustomButton-->
-<!--            android:id="@+id/profilePage_button"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="8dp"-->
-<!--            android:background="@drawable/field_bg_color"-->
-<!--            android:text="Update"-->
-<!--            android:textColor="@color/white"-->
-<!--            app:layout_constraintEnd_toEndOf="@+id/location"-->
-<!--            app:layout_constraintHorizontal_bias="0.0"-->
-<!--            app:layout_constraintStart_toStartOf="@+id/location"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/location" />-->
-
-<!--        <ImageView-->
-<!--            android:id="@+id/imageView3"-->
-<!--            android:layout_width="122dp"-->
-<!--            android:layout_height="113dp"-->
-<!--            android:layout_marginTop="16dp"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/register_title"-->
-<!--            tools:srcCompat="@tools:sample/avatars" />-->
-
-<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
 

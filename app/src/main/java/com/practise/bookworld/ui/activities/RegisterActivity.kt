@@ -16,6 +16,8 @@ import com.practise.bookworld.R
 import com.practise.bookworld.databinding.ActivityAddBookBinding
 import com.practise.bookworld.databinding.ActivityDetailsBinding
 import com.practise.bookworld.databinding.ActivityRegisterBinding
+import com.practise.bookworld.firestoreConfig.FirebaseConfig
+import com.practise.bookworld.models.User
 import kotlinx.android.synthetic.main.activity_login.*
 
 import kotlinx.android.synthetic.main.activity_register.*
@@ -52,7 +54,7 @@ class RegisterActivity : BasicActivity() {
         if(validateInput()){
             displayProgressDialog("Registration is in progress details,please wait...!")
             val userEmail = binding.email.text .toString().trim{it <= ' '}
-            val userPassword = binding.email.text .toString().trim{it <= ' '}
+            val userPassword = binding.password.text.toString().trim{it <= ' '}
 
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(userEmail,userPassword)
                 .addOnCompleteListener(
@@ -61,6 +63,15 @@ class RegisterActivity : BasicActivity() {
                         if(task.isSuccessful){
                             val user :FirebaseUser =  task.result!!.user!!
                             displaySnackBar("Successfully Registered...!!",true)
+
+                            val userDetails = User(
+                                user.uid,
+                                binding.firstname.text .toString().trim{it <= ' '},
+                                binding.lastname.text .toString().trim{it <= ' '},
+                                binding.email.text .toString().trim{it <= ' '}
+                            )
+
+                            FirebaseConfig().addUserDetails(userDetails,this@RegisterActivity)
                             FirebaseAuth.getInstance().signOut()
                             hideProgressBar()
                         }else{
@@ -69,8 +80,11 @@ class RegisterActivity : BasicActivity() {
                         }
                     }
                 )
-
         }
+    }
+
+    fun onAddingUserSuccessfully(){
+        hideProgressBar()
     }
 
     private fun validateInput():Boolean {

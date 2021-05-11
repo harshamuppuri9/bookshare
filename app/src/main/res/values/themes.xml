@@ -13,6 +13,17 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar"/>
-    <style name="MyApp" parent="Theme.MaterialComponents"/>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar" />
+
+    <style name="MyApp" parent="Theme.MaterialComponents" />
+
+    <style name="Theme.Bookworld.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Bookworld.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Bookworld.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

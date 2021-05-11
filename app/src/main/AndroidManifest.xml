@@ -11,7 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Bookworld">
-        <activity android:name=".ui.activities.ProfileActivity"></activity>
+        <activity
+            android:name=".ui.activities.profileSettingsActivity"
+            android:label="@string/title_activity_profile_settings"
+            android:theme="@style/Theme.Bookworld.NoActionBar"></activity>
+        <activity
+            android:name=".ui.activities.ProfileActivity"
+            android:label="@string/title_activity_profile"
+            android:theme="@style/Theme.Bookworld.NoActionBar" />
         <activity
             android:name=".ui.activities.ForgotActivity"
             android:screenOrientation="portrait"

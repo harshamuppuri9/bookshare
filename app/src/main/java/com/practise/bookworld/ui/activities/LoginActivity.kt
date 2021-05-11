@@ -9,10 +9,14 @@ import android.view.inputmethod.InputMethodManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.practise.bookworld.R
+import com.practise.bookworld.firestoreConfig.FirebaseConfig
+import com.practise.bookworld.models.User
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_register.*
 
 class LoginActivity : BasicActivity() {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -58,7 +62,7 @@ class LoginActivity : BasicActivity() {
 
                             val user : FirebaseUser =  task.result!!.user!!
                             displaySnackBar("Successfully Logged In...!!",true)
-
+                            FirebaseConfig().getUserDetails(this@LoginActivity)
                         }else{
                             displaySnackBar(task.exception!!.message.toString(),false)
                         }
@@ -77,8 +81,12 @@ class LoginActivity : BasicActivity() {
                 displaySnackBar("Enter your Password to login", false)
                 false
             }
-
             else ->  true
         }
+    }
+
+    fun onLoginSuccess(user: User) {
+        startActivity(Intent(this@LoginActivity,MyBooksActivity
+        ::class.java))
     }
 }
