@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+    tools:context=".ui.activities.RegisterActivity">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <com.practise.bookworld.utils.CustomTextView
+        android:id="@+id/register_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:includeFontPadding="false"
+        android:text="Create Your Account"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:transitionName="@string/hello_there_welcome_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.287"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/profilePage_firstName"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:hint="Enter FirstName"
+        android:textColorHint="#989898"
+        app:layout_constraintEnd_toEndOf="@+id/register_title"
+        app:layout_constraintStart_toStartOf="@+id/register_title"
+        app:layout_constraintTop_toBottomOf="@+id/register_title">
+
+        <com.practise.bookworld.utils.CustomEditText
+            android:id="@+id/firstname"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:inputType="text"
+            android:padding="16dp"
+            android:textColor="#222934"
+            android:textSize="16sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/profilePage_lastName"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Enter LastName"
+        android:textColorHint="#989898"
+        app:layout_constraintEnd_toEndOf="@+id/profilePage_firstName"
+        app:layout_constraintStart_toStartOf="@+id/profilePage_firstName"
+        app:layout_constraintTop_toBottomOf="@+id/profilePage_firstName">
+
+        <com.practise.bookworld.utils.CustomEditText
+            android:id="@+id/lastname"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="text"
+            android:padding="16dp"
+            android:textColor="#222934"
+            android:textSize="16sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/profilePage_email"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Enter Email ID"
+        android:textColorHint="#989898"
+        app:layout_constraintEnd_toEndOf="@+id/profilePage_lastName"
+        app:layout_constraintStart_toStartOf="@+id/profilePage_lastName"
+        app:layout_constraintTop_toBottomOf="@+id/profilePage_lastName">
+
+        <com.practise.bookworld.utils.CustomEditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="text"
+            android:padding="16dp"
+            android:textColor="#222934"
+            android:textSize="16sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/mobileNumber"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Enter Password"
+        android:textColorHint="#989898"
+        app:layout_constraintEnd_toEndOf="@+id/profilePage_email"
+        app:layout_constraintStart_toStartOf="@+id/profilePage_email"
+        app:layout_constraintTop_toBottomOf="@+id/profilePage_email"
+        app:passwordToggleEnabled="true">
+
+        <com.practise.bookworld.utils.CustomEditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textPassword"
+            android:padding="16dp"
+            android:textColor="#222934"
+            android:textSize="16sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/location"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Confirm Password"
+        android:textColorHint="#989898"
+        app:layout_constraintEnd_toEndOf="@+id/mobileNumber"
+        app:layout_constraintStart_toStartOf="@+id/mobileNumber"
+        app:layout_constraintTop_toBottomOf="@+id/mobileNumber"
+        app:passwordToggleEnabled="true">
+
+        <com.practise.bookworld.utils.CustomEditText
+            android:id="@+id/confirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textPassword"
+            android:padding="16dp"
+            android:textColor="#222934"
+            android:textSize="16sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.practise.bookworld.utils.CustomButton
+        android:id="@+id/register_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/field_bg_color"
+        android:text="Submit"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/location"
+        app:layout_constraintStart_toStartOf="@+id/location"
+        app:layout_constraintTop_toBottomOf="@+id/location" />
+
+    <com.practise.bookworld.utils.CustomTextView
+        android:id="@+id/registerPage_loginBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="end"
+        android:text="Already have an account? Login"
+        app:layout_constraintEnd_toEndOf="@+id/register_button"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/register_button"
+        app:layout_constraintTop_toBottomOf="@+id/register_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
