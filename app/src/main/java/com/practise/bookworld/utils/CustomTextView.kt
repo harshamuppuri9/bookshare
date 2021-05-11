@@ -15,7 +15,7 @@ class CustomTextView(context: Context,attrs:AttributeSet):AppCompatTextView(cont
 
     private fun addFont(){
 
-        val typeface: Typeface = Typeface.createFromAsset(context.assets,"gomarice_old_book.ttf")
+        val typeface: Typeface = Typeface.createFromAsset(context.assets,"Montserrat-Bold.ttf")
         setTypeface(typeface)
     }
 

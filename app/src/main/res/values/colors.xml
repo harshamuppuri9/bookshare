@@ -8,5 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="ImageBackgroundColor">#E1E1E1</color>
+    <color name="SnackBarError">#8BC34A</color>
+    <color name="SnackBarSuccess">#F72400</color>
+
 
 </resources>

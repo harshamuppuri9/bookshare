@@ -14,7 +14,7 @@ class CustomEditText(context: Context, attrs: AttributeSet): AppCompatEditText(c
 
     private fun addFont() {
 
-        val typeface: Typeface = Typeface.createFromAsset(context.assets, "gomarice_old_book.ttf")
+        val typeface: Typeface = Typeface.createFromAsset(context.assets, "Montserrat-Regular.ttf")
         setTypeface(typeface)
     }
 

@@ -13,7 +13,7 @@ class SplashActivity : AppCompatActivity() {
         @Suppress("DEPRECATION")
         Handler().postDelayed(
             {
-                startActivity(Intent(this@SplashActivity,MainActivity::class.java))
+                startActivity(Intent(this@SplashActivity,LoginActivity::class.java))
             },
             2000
         )
