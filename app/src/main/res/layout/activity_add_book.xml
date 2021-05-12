@@ -1,112 +1,227 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activities.AddBookActivity">
+    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+    tools:context=".ui.activities.RegisterActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/add_book_toolbar"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="match_parent"
         >
-        <TextView
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/add_book_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="Add Book"
-            android:textStyle="bold"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.287"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="left|center_vertical"
+                android:text="Add Your Book"
+                android:textColor="@color/purple_700"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addBook_title"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:hint="Enter Book Title"
+            android:textColorHint="#989898"
+            app:layout_constraintEnd_toEndOf="@+id/add_book_toolbar"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/add_book_toolbar"
+            app:layout_constraintTop_toBottomOf="@+id/addBookPage_imageView">
+
+            <com.practise.bookworld.utils.CustomEditText
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:inputType="text"
+                android:padding="16dp"
+                android:textColor="#222934"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addBook_author"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Enter Book Author"
+            android:textColorHint="#989898"
+            app:layout_constraintEnd_toEndOf="@+id/addBook_title"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/addBook_title"
+            app:layout_constraintTop_toBottomOf="@+id/addBook_title">
+
+            <com.practise.bookworld.utils.CustomEditText
+                android:id="@+id/author"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:padding="16dp"
+                android:textColor="#222934"
+                android:textSize="16sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addBook_ISBN"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Enter ISBN"
+            android:textColorHint="#989898"
+            app:layout_constraintEnd_toEndOf="@+id/addBook_author"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/addBook_author"
+            app:layout_constraintTop_toBottomOf="@+id/addBook_author">
+
+            <com.practise.bookworld.utils.CustomEditText
+                android:id="@+id/ISBN"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textEmailAddress"
+                android:padding="16dp"
+                android:textColor="#222934"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/add_book_genres"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Enter Book Genres"
+            android:textColorHint="#989898"
+            app:layout_constraintEnd_toEndOf="@+id/addBook_ISBN"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/addBook_ISBN"
+            app:layout_constraintTop_toBottomOf="@+id/addBook_ISBN">
+
+            <com.practise.bookworld.utils.CustomEditText
+                android:id="@+id/genres"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:padding="16dp"
+                android:textColor="#222934"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addBook_Language"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Enter Language"
+            android:textColorHint="#989898"
+            app:layout_constraintEnd_toEndOf="@+id/add_book_genres"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/add_book_genres"
+            app:layout_constraintTop_toBottomOf="@+id/add_book_genres">
+
+            <com.practise.bookworld.utils.CustomEditText
+                android:id="@+id/languages"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:padding="16dp"
+                android:textColor="#222934"
+                android:textSize="16sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addBook_Notes"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Enter Notes"
+            android:textColorHint="#989898"
+            app:layout_constraintEnd_toEndOf="@+id/addBook_Language"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/addBook_Language"
+            app:layout_constraintTop_toBottomOf="@+id/addBook_Language">
+
+            <com.practise.bookworld.utils.CustomEditText
+                android:id="@+id/notes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:padding="16dp"
+                android:textColor="#222934"
+                android:textSize="16sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.practise.bookworld.utils.CustomButton
+            android:id="@+id/addBookSubmitBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/field_bg_color"
+            android:text="Post"
+            android:visibility="visible"
             android:textColor="@color/white"
-            />
-    </androidx.appcompat.widget.Toolbar>
+            app:layout_constraintEnd_toEndOf="@+id/addBook_Notes"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/addBook_Notes"
+            app:layout_constraintTop_toBottomOf="@+id/addBook_Notes" />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:fillViewport="true"
-        android:scrollbars="none"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/add_book_toolbar">
+        <FrameLayout
+            android:id="@+id/addBookPage_imageView"
+            android:layout_width="120dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="64dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_toolbar"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <FrameLayout
-                android:id="@+id/add_book_image_frame"
+            <ImageView
+                android:id="@+id/add_book_image"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:layout_height="match_parent"
+                android:background="#E1E1E1"
+                android:contentDescription="selectedImage"
+                tools:srcCompat="@drawable/placeholder"
+                android:scaleType="fitXY" />
 
-                <ImageView
-                    android:id="@+id/add_book_image"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:contentDescription="selectedImage"
-                    android:scaleType="fitXY"
-                    android:background="#E1E1E1"
-                    />
-
-                <ImageView
-                    android:id="@+id/update_book_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|end"
-                    android:contentDescription="uploadLogo"
-                    android:padding="16dp"
-                    android:src="@drawable/ic_outline_camera_alt_24" />
-            </FrameLayout>
-
-            <EditText
-                android:id="@+id/add_book_title"
-                android:layout_width="match_parent"
+            <ImageView
+                android:id="@+id/update_book_image"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:hint="Book Title"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/add_book_image_frame" />
-
-            <EditText
-                android:id="@+id/add_book_description"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:hint="Book Description"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/add_book_title" />
-
-            <EditText
-                android:id="@+id/add_book_ISBN"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:hint="Book ISBN"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/add_book_description" />
-
-            <Button
-                android:id="@+id/add_book_submit_btn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="Submit"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/add_book_ISBN" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+                android:layout_gravity="bottom|end"
+                android:contentDescription="uploadLogo"
+                android:padding="16dp"
+                android:src="@drawable/ic_outline_camera_alt_24"
+                />
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>

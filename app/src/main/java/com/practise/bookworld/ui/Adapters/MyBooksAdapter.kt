@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.practise.bookworld.R
 import com.practise.bookworld.models.Book
 import com.practise.bookworld.ui.activities.DetailsActivity
-import com.practise.bookworld.ui.fragments.HomeFragment
 import com.practise.bookworld.ui.fragments.MyBooksFragment
 import com.practise.bookworld.utils.ImageLoader
 import kotlinx.android.synthetic.main.book_list_layout.view.*
@@ -36,10 +35,10 @@ open class MyBooksAdapter(
         val model = list[position]
         Log.i("1234",list.toString())
         if(holder is MyBooksViewHolder){
-            ImageLoader(context).loadCoverPhoto(model.book_cover,holder.itemView.my_book_image)
+            ImageLoader(context).loadPhoto(model.book_cover,holder.itemView.my_book_image)
 
             holder.itemView.findViewById<TextView>(R.id.my_book_name).text = model.book_title
-            holder.itemView.findViewById<TextView>(R.id.my_book_author).text = model.book_id
+            holder.itemView.findViewById<TextView>(R.id.my_book_author).text = model.book_author
 
             holder.itemView.findViewById<ImageView>(R.id.my_book_delete).setOnClickListener{
                    fragment.deleteProduct(model.book_id

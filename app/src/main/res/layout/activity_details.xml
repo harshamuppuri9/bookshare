@@ -10,7 +10,7 @@
         android:id="@+id/bookdetails_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@android:color/holo_green_light"
+        android:background="@color/white"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,10 +20,9 @@
             android:id="@+id/book_details_pagename"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_horizontal"
+            android:gravity="left|center_vertical"
             android:padding="15dp"
             android:text="Book Details"
-            android:textAlignment="center"
             android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -46,8 +45,8 @@
                 tools:ignore="MissingConstraints">
                 <ImageView
                     android:id="@+id/bookdetails_image"
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp"
+                    android:layout_width="220dp"
+                    android:layout_height="320dp"
                     android:scaleType="fitXY"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -65,22 +64,65 @@
                         app:layout_constraintTop_toBottomOf="@+id/bookdetails_image"
                         app:layout_constraintEnd_toEndOf="parent"
                         >
+
                         <TextView
                             android:id="@+id/book_details_title"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Book Title"
-                            android:textSize="16sp"
+                            android:layout_margin="10dp"
+                            android:gravity="center"
                             android:textColor="#545353"
-                            />
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
                         <TextView
                             android:id="@+id/book_details_author"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Book Author"
-                            android:textSize="16sp"
+                            android:layout_margin="10dp"
+                            android:gravity="center"
                             android:textColor="#545353"
-                            />
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/book_details_ISBN"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:gravity="center"
+                            android:textColor="#545353"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/book_details_genres"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:gravity="center"
+                            android:textColor="#545353"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/book_details_language"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:gravity="center"
+                            android:textColor="#545353"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/book_details_notes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:gravity="center"
+                            android:textColor="#545353"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
                     </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

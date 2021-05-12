@@ -14,10 +14,7 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.practise.bookworld.models.Book
 import com.practise.bookworld.models.User
-import com.practise.bookworld.ui.activities.AddBookActivity
-import com.practise.bookworld.ui.activities.DetailsActivity
-import com.practise.bookworld.ui.activities.LoginActivity
-import com.practise.bookworld.ui.activities.RegisterActivity
+import com.practise.bookworld.ui.activities.*
 import com.practise.bookworld.ui.fragments.HomeFragment
 import com.practise.bookworld.ui.fragments.MyBooksFragment
 import com.practise.bookworld.utils.Constants
@@ -28,10 +25,9 @@ class FirebaseConfig {
 
     fun getAllBooks(fragment: Fragment){
         firestoreObject.collection("Books")
-            .whereEqualTo("book_id","1233")
+            .whereEqualTo("user_id",FirebaseAuth.getInstance().currentUser.uid)
             .get()
             .addOnSuccessListener { doc ->
-                Log.e("list123",doc.documents.toString())
                 val booksList:ArrayList<Book> = ArrayList()
 
                 for(i in doc.documents){
@@ -51,7 +47,7 @@ class FirebaseConfig {
              }
     }
 
-    fun uploadCoverPhoto(activity: Activity, imageUri: Uri?,type:String,name:String){
+    fun uploadPhoto(activity: Activity, imageUri: Uri?, type:String, name:String){
 
         val reference:StorageReference = FirebaseStorage.getInstance().reference.child(
                 name+System.currentTimeMillis()+"."+Constants.fileExtention(imageUri,activity)
@@ -65,24 +61,33 @@ class FirebaseConfig {
 
                                 when(activity){
                                     is AddBookActivity->{
-                                        Log.i("res1","Success")
+                                        activity.uploadDetailsToDatabase(uri.toString())
+                                    }
+                                    is ProfileActivity->{
                                         activity.uploadDetailsToDatabase(uri.toString())
                                     }
                                 }
                             }
                 }
                 .addOnFailureListener{exception->
-
+                    when(activity){
+                        is AddBookActivity->{
+                            activity. hideProgressBar()
+                            activity.displayProgressDialog("Couldnt upload image, please try again..!!")
+                        }
+                    }
+                    Log.e(activity.javaClass.simpleName,"Error while uploading photo of the book")
                 }
     }
 
     fun uploadBookDetails(activity: AddBookActivity, bookDetails: Book) {
+
         firestoreObject
             .collection("Books")
             .document()
             .set(bookDetails,SetOptions.merge())
             .addOnSuccessListener{
-
+                activity.hideProgressBar()
                 activity.onUpdatingBookDetails()
             }
     }
@@ -151,8 +156,14 @@ class FirebaseConfig {
 
                     //Editor instance to edit the stored details
                     val editor = sharedPreferences.edit()
-                    editor.putString("lastname","${user!!.lastName}")
+                    editor.putString("lastName","${user!!.lastName}")
                     editor.putString("id","${user.user_id}")
+                    editor.putString("firstName","${user!!.firstName}")
+                    editor.putString("city","${user!!.city}")
+                    editor.putString("mobile","${user!!.mobile}")
+                    editor.putString("email","${user!!.email}")
+                    editor.putString("city","${user!!.city}")
+                    editor.putString("image","${user!!.image}")
                     editor.apply()
 
                     when(activity){
@@ -162,9 +173,6 @@ class FirebaseConfig {
                                 activity.onLoginSuccess(user)
 
                         }
-//                    is profileSettingsActivity ->{
-//                        activity.OnProfileUpdateSuccess(user)
-//                    }
                     }
                 }else{
                     Log.e(activity.javaClass.simpleName,"Error in fetching the user details")
@@ -177,11 +185,23 @@ class FirebaseConfig {
                     is LoginActivity ->{
                         activity.hideProgressBar()
                     }
-//                    is profileSettingsActivity ->{
-//                        activity.OnProfileUpdateSuccess(user)
-//                    }
+
                 }
             }
+    }
+
+    fun updateUserDetails(profileActivity: ProfileActivity, user: HashMap<String,Any>) {
+        var loggedInuserId = FirebaseAuth.getInstance().currentUser.uid
+        firestoreObject.collection("users")
+                .document(loggedInuserId)
+                .update(user)
+                .addOnSuccessListener {
+                    profileActivity.updateSuccess()
+                }
+                .addOnFailureListener { e ->
+                    profileActivity.updateFailed()
+
+                }
     }
 
 }

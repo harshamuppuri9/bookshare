@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide
 class ImageLoader(val context: Context) {
 
     //Function to load,scale and display images of the books using the URL or URI
-    fun loadCoverPhoto(image:Any,imageView: ImageView){
+    fun loadPhoto(image:Any, imageView: ImageView){
         try{
             Glide.with(context)
                     .load(image)

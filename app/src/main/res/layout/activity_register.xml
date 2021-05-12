@@ -33,7 +33,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/profilePage_firstName"
+        android:id="@+id/addBook_title"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -56,16 +56,16 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/profilePage_lastName"
+        android:id="@+id/addBook_author"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:hint="Enter LastName"
         android:textColorHint="#989898"
-        app:layout_constraintEnd_toEndOf="@+id/profilePage_firstName"
-        app:layout_constraintStart_toStartOf="@+id/profilePage_firstName"
-        app:layout_constraintTop_toBottomOf="@+id/profilePage_firstName">
+        app:layout_constraintEnd_toEndOf="@+id/addBook_title"
+        app:layout_constraintStart_toStartOf="@+id/addBook_title"
+        app:layout_constraintTop_toBottomOf="@+id/addBook_title">
 
         <com.practise.bookworld.utils.CustomEditText
             android:id="@+id/lastname"
@@ -80,16 +80,16 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/profilePage_email"
+        android:id="@+id/addBook_ISBN"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:hint="Enter Email ID"
         android:textColorHint="#989898"
-        app:layout_constraintEnd_toEndOf="@+id/profilePage_lastName"
-        app:layout_constraintStart_toStartOf="@+id/profilePage_lastName"
-        app:layout_constraintTop_toBottomOf="@+id/profilePage_lastName">
+        app:layout_constraintEnd_toEndOf="@+id/addBook_author"
+        app:layout_constraintStart_toStartOf="@+id/addBook_author"
+        app:layout_constraintTop_toBottomOf="@+id/addBook_author">
 
         <com.practise.bookworld.utils.CustomEditText
             android:id="@+id/email"
@@ -102,16 +102,16 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/mobileNumber"
+        android:id="@+id/add_book_genres"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:hint="Enter Password"
         android:textColorHint="#989898"
-        app:layout_constraintEnd_toEndOf="@+id/profilePage_email"
-        app:layout_constraintStart_toStartOf="@+id/profilePage_email"
-        app:layout_constraintTop_toBottomOf="@+id/profilePage_email"
+        app:layout_constraintEnd_toEndOf="@+id/addBook_ISBN"
+        app:layout_constraintStart_toStartOf="@+id/addBook_ISBN"
+        app:layout_constraintTop_toBottomOf="@+id/addBook_ISBN"
         app:passwordToggleEnabled="true">
 
         <com.practise.bookworld.utils.CustomEditText
@@ -126,16 +126,16 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/location"
+        android:id="@+id/addBook_Language"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:hint="Confirm Password"
         android:textColorHint="#989898"
-        app:layout_constraintEnd_toEndOf="@+id/mobileNumber"
-        app:layout_constraintStart_toStartOf="@+id/mobileNumber"
-        app:layout_constraintTop_toBottomOf="@+id/mobileNumber"
+        app:layout_constraintEnd_toEndOf="@+id/add_book_genres"
+        app:layout_constraintStart_toStartOf="@+id/add_book_genres"
+        app:layout_constraintTop_toBottomOf="@+id/add_book_genres"
         app:passwordToggleEnabled="true">
 
         <com.practise.bookworld.utils.CustomEditText
@@ -157,9 +157,9 @@
         android:background="@drawable/field_bg_color"
         android:text="Submit"
         android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/location"
-        app:layout_constraintStart_toStartOf="@+id/location"
-        app:layout_constraintTop_toBottomOf="@+id/location" />
+        app:layout_constraintEnd_toEndOf="@+id/addBook_Language"
+        app:layout_constraintStart_toStartOf="@+id/addBook_Language"
+        app:layout_constraintTop_toBottomOf="@+id/addBook_Language" />
 
     <com.practise.bookworld.utils.CustomTextView
         android:id="@+id/registerPage_loginBtn"

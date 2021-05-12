@@ -12,38 +12,40 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
-
-        <com.practise.bookworld.utils.CustomTextView
-            android:id="@+id/register_title"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="32dp"
-            android:includeFontPadding="false"
-            android:text="Update Profile"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:transitionName="@string/hello_there_welcome_back"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/profile_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:gravity="center_vertical"
+            android:background="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.287"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="left|center_vertical"
+                android:text="Profile Settings"
+                android:textColor="@color/purple_700"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </androidx.appcompat.widget.Toolbar>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/profilePage_firstName"
+            android:id="@+id/addBook_title"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
             android:hint="Enter FirstName"
             android:textColorHint="#989898"
-            app:layout_constraintEnd_toEndOf="@+id/register_title"
+            app:layout_constraintEnd_toEndOf="@+id/profile_toolbar"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/register_title"
+            app:layout_constraintStart_toStartOf="@+id/profile_toolbar"
             app:layout_constraintTop_toBottomOf="@+id/profilePage_imageView">
 
             <com.practise.bookworld.utils.CustomEditText
@@ -57,17 +59,17 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/profilePage_lastName"
+            android:id="@+id/addBook_author"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:hint="Enter LastName"
             android:textColorHint="#989898"
-            app:layout_constraintEnd_toEndOf="@+id/profilePage_firstName"
+            app:layout_constraintEnd_toEndOf="@+id/addBook_title"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/profilePage_firstName"
-            app:layout_constraintTop_toBottomOf="@+id/profilePage_firstName">
+            app:layout_constraintStart_toStartOf="@+id/addBook_title"
+            app:layout_constraintTop_toBottomOf="@+id/addBook_title">
 
             <com.practise.bookworld.utils.CustomEditText
                 android:id="@+id/lastname"
@@ -81,17 +83,17 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/profilePage_email"
+            android:id="@+id/addBook_ISBN"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:hint="Enter Email ID"
             android:textColorHint="#989898"
-            app:layout_constraintEnd_toEndOf="@+id/profilePage_lastName"
+            app:layout_constraintEnd_toEndOf="@+id/addBook_author"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/profilePage_lastName"
-            app:layout_constraintTop_toBottomOf="@+id/profilePage_lastName">
+            app:layout_constraintStart_toStartOf="@+id/addBook_author"
+            app:layout_constraintTop_toBottomOf="@+id/addBook_author">
 
             <com.practise.bookworld.utils.CustomEditText
                 android:id="@+id/email"
@@ -104,17 +106,17 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/mobileNumber"
+            android:id="@+id/add_book_genres"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:hint="Enter Mobile"
             android:textColorHint="#989898"
-            app:layout_constraintEnd_toEndOf="@+id/profilePage_email"
+            app:layout_constraintEnd_toEndOf="@+id/addBook_ISBN"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/profilePage_email"
-            app:layout_constraintTop_toBottomOf="@+id/profilePage_email">
+            app:layout_constraintStart_toStartOf="@+id/addBook_ISBN"
+            app:layout_constraintTop_toBottomOf="@+id/addBook_ISBN">
         <com.practise.bookworld.utils.CustomEditText
                 android:id="@+id/profile_mobile"
                 android:layout_width="match_parent"
@@ -126,17 +128,17 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/location"
+            android:id="@+id/addBook_Language"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:hint="Enter City"
             android:textColorHint="#989898"
-            app:layout_constraintEnd_toEndOf="@+id/mobileNumber"
+            app:layout_constraintEnd_toEndOf="@+id/add_book_genres"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/mobileNumber"
-            app:layout_constraintTop_toBottomOf="@+id/mobileNumber"
+            app:layout_constraintStart_toStartOf="@+id/add_book_genres"
+            app:layout_constraintTop_toBottomOf="@+id/add_book_genres"
            >
 
             <com.practise.bookworld.utils.CustomEditText
@@ -151,28 +153,56 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.practise.bookworld.utils.CustomButton
-            android:id="@+id/profile_button"
+            android:id="@+id/updateSubmitBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@drawable/field_bg_color"
             android:text="Update"
             android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="@+id/location"
+            app:layout_constraintEnd_toEndOf="@+id/addBook_Language"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/location"
-            app:layout_constraintTop_toBottomOf="@+id/location" />
+            app:layout_constraintStart_toStartOf="@+id/addBook_Language"
+            app:layout_constraintTop_toBottomOf="@+id/addBook_Language" />
+        <com.practise.bookworld.utils.CustomButton
+            android:id="@+id/LogOutSubmitBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/field_bg_color"
+            android:text="LogOut"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/updateSubmitBtn"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/updateSubmitBtn"
+            app:layout_constraintTop_toBottomOf="@+id/updateSubmitBtn" />
 
-        <ImageView
+        <FrameLayout
             android:id="@+id/profilePage_imageView"
             android:layout_width="122dp"
             android:layout_height="113dp"
-            android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register_title"
-            tools:srcCompat="@tools:sample/avatars" />
-
+            app:layout_constraintTop_toBottomOf="@+id/profile_toolbar"
+            >
+            <ImageView
+                android:id="@+id/add_profile_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#E1E1E1"
+                android:contentDescription="selectedImage"
+                tools:srcCompat="@tools:sample/avatars"
+                android:scaleType="fitXY"/>
+            <ImageView
+                android:id="@+id/image_updateBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:contentDescription="uploadLogo"
+                android:padding="4dp"
+                android:src="@drawable/ic_outline_camera_alt_24"
+                />
+        </FrameLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

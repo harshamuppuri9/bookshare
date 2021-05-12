@@ -6,16 +6,13 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.practise.bookworld.R
 import com.practise.bookworld.models.Book
 import com.practise.bookworld.ui.activities.DetailsActivity
 import com.practise.bookworld.ui.fragments.HomeFragment
-import com.practise.bookworld.ui.fragments.MyBooksFragment
 import com.practise.bookworld.utils.ImageLoader
-import kotlinx.android.synthetic.main.book_list_layout.view.*
 import kotlinx.android.synthetic.main.home_book_list_layout.view.*
 
 class HomePageBooksAdapter (
@@ -37,10 +34,10 @@ class HomePageBooksAdapter (
             val model = list[position]
             Log.i("12345",list.toString())
             if(holder is HomePageBooksViewHolder){
-                ImageLoader(context).loadCoverPhoto(model.book_cover,holder.itemView.homePage_image)
+                ImageLoader(context).loadPhoto(model.book_cover,holder.itemView.homePage_image)
 
                 holder.itemView.findViewById<TextView>(R.id.homePage_bookName).text = model.book_title
-                holder.itemView.findViewById<TextView>(R.id.homePage_bookAuthor).text = model.book_description
+                holder.itemView.findViewById<TextView>(R.id.homePage_bookAuthor).text = "By: "+ model.book_author
 
                 holder.itemView.setOnClickListener {
                     val intent = Intent(context, DetailsActivity::class.java)

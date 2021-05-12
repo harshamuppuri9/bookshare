@@ -8,10 +8,14 @@ import kotlinx.android.parcel.Parcelize
  */
 @Parcelize
 data class Book(
-    var book_id:String="",
-    val book_title:String="",
-    val book_description:String="",
-    val book_ISBN:String="",
-    val book_cover :String="",
     val user_id:String="",
+    val book_title:String="",
+    val book_author:String="",
+    val book_ISBN:String="",
+    var book_genres:String="",
+    var book_language:String="",
+    var book_notes:String="",
+    var user_lastName:String="",
+    val book_cover :String="",
+    var book_id:String="",
 ) : Parcelable

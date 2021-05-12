@@ -1,12 +1,14 @@
 package com.practise.bookworld.ui.activities
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MotionEvent
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
 import android.widget.Toast
 import com.practise.bookworld.R
@@ -20,7 +22,7 @@ import com.practise.bookworld.utils.Constants
 import com.practise.bookworld.utils.ImageLoader
 import java.io.IOException
 
-class AddBookActivity : AppCompatActivity(),View.OnClickListener {
+class AddBookActivity : BasicActivity(),View.OnClickListener {
 
     private var selectedImageUri: Uri? = null
     private var updateUri:String=""
@@ -35,6 +37,7 @@ class AddBookActivity : AppCompatActivity(),View.OnClickListener {
          setupActionBar(toolbar)
         binding.updateBookImage.setOnClickListener(this)
         binding.addBookSubmitBtn.setOnClickListener(this)
+        binding.addBookSubmitBtn.isEnabled = true
     }
 
     private fun setupActionBar(add_book_toolbar:Toolbar){
@@ -65,15 +68,20 @@ class AddBookActivity : AppCompatActivity(),View.OnClickListener {
                     }
                 }
 
-                R.id.add_book_submit_btn ->{
-
-                    if(selectedImageUri != null){
-                       FirebaseConfig().uploadCoverPhoto(this@AddBookActivity,selectedImageUri,Constants.Book_Photo,"test")
+                R.id.addBookSubmitBtn ->{
+                    var name = binding.title.text.toString() + binding.ISBN.text.toString()
+                    if(selectedImageUri != null && name != null && binding.author.toString().isNotEmpty()){
+                        displayProgressDialog("Saving...,Please wait")
+                       FirebaseConfig().uploadPhoto(this@AddBookActivity,selectedImageUri,Constants.Book_Photo,name)
+                    }else{
+                        displaySnackBar("please add an image,name and author of the book",false)
                     }
                 }
             }
         }
     }
+
+
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode,
@@ -99,34 +107,53 @@ class AddBookActivity : AppCompatActivity(),View.OnClickListener {
             var image:ImageView = findViewById<View>(R.id.update_book_image) as ImageView
             image.setImageDrawable(
                     ContextCompat.getDrawable(
-                    this@AddBookActivity,R.drawable.ic_baseline_arrow_back
+                    this@AddBookActivity,R.drawable.ic_baseline_mode_edit_24
                     )
             )
             try{
                 ImageLoader(this@AddBookActivity)
-                        .loadCoverPhoto(selectedImageUri!!,findViewById(R.id.add_book_image))
+                        .loadPhoto(selectedImageUri!!,findViewById(R.id.add_book_image))
             }catch (e:IOException){
                 e.printStackTrace()
             }
         }
     }
 
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+        if (currentFocus != null) {
+            try{
+                val keyboardManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                keyboardManager.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
+            }catch(e:Exception){
+                e.printStackTrace()
+            }
+        }
+        return super.dispatchTouchEvent(ev)
+    }
+
     fun uploadDetailsToDatabase(uri: String) {
         updateUri = uri
+        var ref = this.getSharedPreferences("USER",Context.MODE_PRIVATE)
+        var lastName =  ref.getString("lastName","")
+        var id = ref.getString("id","")
 
         val book = Book(
-           "1233",
-            binding.addBookTitle.text.toString().trim{it <= ' '},
-            binding.addBookDescription.text.toString().trim{it <= ' '},
-            binding.addBookISBN.text.toString().trim{it <= ' '},
-            updateUri,
-                "17474"
+           id!!,
+            binding.title.text.toString().trim{it <= ' '},
+            binding.author.text.toString().trim{it <= ' '},
+            binding.ISBN.text.toString().trim{it <= ' '},
+                binding.genres.text.toString().trim{it <= ' '},
+                binding.languages.text.toString().trim{it <= ' '},
+                binding.notes.text.toString().trim{it <= ' '},
+                lastName.toString(),
+                updateUri,
         )
 
         FirebaseConfig().uploadBookDetails(this@AddBookActivity,book)
     }
 
      fun onUpdatingBookDetails() {
-         Toast.makeText(this,"Success",Toast.LENGTH_LONG).show()
+         displaySnackBar("successfully posted",true)
+        binding.addBookSubmitBtn.isEnabled = false
     }
 }

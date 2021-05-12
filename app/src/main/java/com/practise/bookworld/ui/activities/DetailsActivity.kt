@@ -46,12 +46,16 @@ class DetailsActivity : AppCompatActivity() {
     fun onFetchingBookDetails(book: Book){
 
         //Load Book Cover photo
-        ImageLoader(this@DetailsActivity).loadCoverPhoto(
+        ImageLoader(this@DetailsActivity).loadPhoto(
             book.book_cover,
             bookdetails_image
         )
 
-        book_details_title.text = book.book_title
-        book_details_author.text =book.book_description
+        book_details_title.text = "Title: "+book.book_title
+        book_details_author.text ="Author: "+book.book_author
+        book_details_ISBN.text = "ISBN: "+book.book_ISBN
+        book_details_genres.text = "Genres: "+book.book_genres
+        book_details_language.text = "Language: "+book.book_language
+        book_details_notes.text = "Notes from user: "+book.book_notes
     }
 }

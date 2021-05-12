@@ -37,17 +37,7 @@ class LoginActivity : BasicActivity() {
 
     }
 
-    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
-        if (currentFocus != null) {
-            try{
-                val keyboardManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                keyboardManager.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
-            }catch(e:Exception){
-                e.printStackTrace()
-            }
-        }
-        return super.dispatchTouchEvent(ev)
-    }
+
 
     private fun userLogin(){
         if(validateUser()){
@@ -88,5 +78,6 @@ class LoginActivity : BasicActivity() {
     fun onLoginSuccess(user: User) {
         startActivity(Intent(this@LoginActivity,MyBooksActivity
         ::class.java))
+
     }
 }

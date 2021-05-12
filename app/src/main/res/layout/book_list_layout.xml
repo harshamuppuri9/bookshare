@@ -4,15 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="2dp"
-    android:background="@drawable/view_border"
+    android:background="#E8E7E7"
     android:orientation="vertical"
-    android:padding="1dp"
-    >
+    android:padding="1dp">
 
     <LinearLayout
         android:id="@+id/my_book_image_view"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@drawable/booklist_image_background"
         android:padding="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,7 +21,7 @@
         <ImageView
             android:id="@+id/my_book_image"
             android:layout_width="80dp"
-            android:layout_height="70dp"
+            android:layout_height="100dp"
             android:contentDescription="MyBookImage"
             android:scaleType="fitXY" />
     </LinearLayout>
@@ -46,18 +45,19 @@
             android:layout_height="wrap_content"
             android:text="Name: "
             android:textColor="#545353"
-            android:textSize="14sp" />
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/my_book_author"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="14sp"
-            android:text="Author"
+            android:text="Author:"
             android:textColor="#545353"
             android:textColorHint="#545353"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textSize="18sp"
+            android:textStyle="bold|italic" />
     </LinearLayout>
 
     <ImageButton

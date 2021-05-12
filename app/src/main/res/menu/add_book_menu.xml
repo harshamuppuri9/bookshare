@@ -7,5 +7,10 @@
         android:title="Add a book"
         app:showAsAction="always"
         />
-
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_twotone_settings_24"
+        android:title="Update Profile"
+        app:showAsAction="always"
+        />
 </menu>

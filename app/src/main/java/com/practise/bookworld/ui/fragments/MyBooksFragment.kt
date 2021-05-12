@@ -15,6 +15,8 @@ import com.practise.bookworld.firestoreConfig.FirebaseConfig
 import com.practise.bookworld.models.Book
 import com.practise.bookworld.ui.Adapters.MyBooksAdapter
 import com.practise.bookworld.ui.activities.AddBookActivity
+import com.practise.bookworld.ui.activities.ProfileActivity
+import com.practise.bookworld.ui.activities.RegisterActivity
 
 class MyBooksFragment : ProgressFragment() {
 
@@ -45,6 +47,10 @@ class MyBooksFragment : ProgressFragment() {
         when(item_id){
             R.id.action_add_book -> {
                 startActivity(Intent(activity, AddBookActivity::class.java))
+                return true
+            }
+            R.id.settings -> {
+                startActivity(Intent(activity, ProfileActivity::class.java))
                 return true
             }
         }
